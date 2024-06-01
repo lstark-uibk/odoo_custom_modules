@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+       <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="replace"/>
+<!--            <xpath expr="//field[@name='phone']" position="replace"/>-->
+            <xpath expr="//field[@name='website']" position="replace"/>
+            <xpath expr="//field[@name='title']" position="replace"/>
+<!--            <group string="ProduzentInnen Information" name = "producer_info">-->
+<!--                <group>-->
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="yield_profile"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="annual_yield"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="power"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="energysource"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="consumption_type"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="annualconsumption"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="networkprovider"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="networkprovider"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="consumption_type"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="bic"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="iban"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="bank_account_name"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="customer_number"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="meteringpoint"/>
+            </xpath>
+<!--                </group>-->
+<!--            </group>-->
+        </field>
+    </record>
+
+
+</odoo>

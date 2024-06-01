@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <record id="menu_for_input_form" model = "website.menu">-->
+<!--        <field name = "ProuzentInnnenFormular"></field>-->
+<!--        <field name="url">/InputForm</field>-->
+<!--        <field name="parent_id"> ref="website.main_menu"</field>-->
+<!--        <field name="sequence">55</field>-->
+<!--    </record>-->
+<!--    <template id = "template" name = "Template">-->
+<!--        <t t-call = "website.layout">-->
+<!--            Test Template-->
+<!--        </t>-->
+
+<!--    </template>-->
+    <template id="create_prod" name="Create Prod">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/New_Input_thanks" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="firstname" class="control-label">Vorname*</label>
+                                <input type="text" name="firstname" id="firstname" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="surename" class="control-label">Nachname*</label>
+                                <input type="text" name="surename" id="surename" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Telefonnummer*</label>
+                                <input type="text" name="email" id="email" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="control-label">Mail Adresse*</label>
+                                <input type="text" name="phone" id="phone" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="is_company" class="control-label">Ich bin*</label>
+                                <input type="checkbox" name="is_company" id="is_company" class="form-control" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vat" class="control-label">USt Nummer*</label>
+                                <input type="text" name="vat" id="vat" class="form-control"/>
+                            </div>
+<!--                            shoud be ATU number-->
+                            <div class="form-group">
+                                <label for="street" class="control-label">Straße, Hausnummer, Top*</label>
+                                <input type="text" name="street" id="street" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip" class="control-label">Postleitzahl*</label>
+                                <input type="text" name="zip" id="zip" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city" class="control-label">Ort/Stadt*</label>
+                                <input type="text" name="city" id="city" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="meteringpoint" class="control-label">Zählpunktnummer*</label>
+                                <input type="text" name="meteringpoint" id="meteringpoint" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="networkprovider" class="control-label">Netzbetreiber*</label>
+                                <input type="text" name="networkprovider" id="networkprovider" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="metering_equal_adress" class="control-label">Zählpunktadress ist gleich Adresse oben*</label>
+                                <input type="text" name="metering_equal_adress" id="metering_equal_adress" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="annualconsumption" class="control-label">Geschätzter Jahresverbrauch*</label>
+                                <input type="text" name="annualconsumption" id="annualconsumption" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="consumption_type" class="control-label">Voraussichtliches Lastprofil*</label>
+                                <input type="text" name="consumption_type" id="consumption_type" class="form-control" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="othercomments" class="control-label">Andere Anmerkungen*</label>
+                                <input type="text" name="othercomments" id="othercomments" class="form-control" required="required"/>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <record id="prod_thanks" model = "website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/Thankyou</field>
+        <field name="website_published">True</field>
+        <field name="key">gei.thanks</field>
+        <field name="arch" type="xml">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class = "container">
+                        <h1>Thanks</h1>
+
+                    </div>
+                </div>
+            </t>
+        </field>
+    </record>
+
+</odoo>
