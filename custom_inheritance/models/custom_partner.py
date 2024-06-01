@@ -16,9 +16,9 @@ class CustomPartner_inheritance(models.Model):
     customer_number = fields.Integer(string="Kundennummer", required = True,tracking=True)
     # ust_number = fields.Integer(string="USt. Nummer",tracking=True) gibts schon 'vat'
     #gibts schon 'street'
-    # street = fields.Char(string="Straße", required = True,tracking=True)
-    # housenumber = fields.Char(string="Hausnummer", required=True, tracking=True)
-    # top = fields.Char(string="Top",tracking=True)
+    street = fields.Char(string="Straße", required = True,tracking=True)
+    housenumber = fields.Char(string="Hausnummer", required=True, tracking=True)
+    top = fields.Char(string="Top",tracking=True)
     # postalcode = fields.Integer(string="Postleitzahl", required = True,tracking=True)
     # city = fields.Char(string="Ort/Stadt", required = True,tracking=True)
     bank_account_name = fields.Char(string="Name des Bankaccounts", required = True,tracking=True)

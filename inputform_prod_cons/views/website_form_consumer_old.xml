@@ -82,6 +82,7 @@
                                 <label for="othercomments" class="control-label">Andere Anmerkungen*</label>
                                 <input type="text" name="othercomments" id="othercomments" class="form-control" required="required"/>
                             </div>
+
                             <div class="clearfix oe_login_buttons">
                                 <button type="submit" class="btn btn-primary pull-left">Submit</button>
                             </div>
@@ -93,22 +94,22 @@
     </template>
 
 
-    <record id="prod_thanks" model = "website.page">
-        <field name="name">Thanks</field>
-        <field name="type">qweb</field>
-        <field name="url">/Thankyou</field>
-        <field name="website_published">True</field>
-        <field name="key">gei.thanks</field>
-        <field name="arch" type="xml">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class = "container">
-                        <h1>Thanks</h1>
+<!--    <record id="prod_thanks" model = "website.page">-->
+<!--        <field name="name">Thanks</field>-->
+<!--        <field name="type">qweb</field>-->
+<!--        <field name="url">/Thankyou</field>-->
+<!--        <field name="website_published">True</field>-->
+<!--        <field name="key">gei.thanks</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <t t-call="website.layout">-->
+<!--                <div id="wrap">-->
+<!--                    <div class = "container">-->
+<!--                        <h1>Thanks</h1>-->
 
-                    </div>
-                </div>
-            </t>
-        </field>
-    </record>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </t>-->
+<!--        </field>-->
+<!--    </record>-->
 
 </odoo>
