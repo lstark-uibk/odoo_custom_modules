@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# newliine
 {
     'name': 'Custom Inheritance',
     'version': '1.0',
