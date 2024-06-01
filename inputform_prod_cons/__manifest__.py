@@ -9,6 +9,7 @@
     'depends': ['mail','website','sale'],
     'data': [
         'views/website_form_consumer.xml',
+        'views/file_template_from_website.xml',
     ],
     'demo': [],
     'qweb': [],

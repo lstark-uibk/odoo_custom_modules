@@ -3,13 +3,22 @@ from odoo.http import request
 
 
 class InputForm(http.Controller):
-    @http.route('/InputForm',website = True, auth='public')
+    @http.route('/ProduzentInnenformular',website = True, auth='public')
     def input_form(self,**kw):
+        # pass
         # return "This is the input form in making"
-        return  request.render("inputform_prod_cons.create_prod",{})
+        # return  request.render("inputform_prod_cons.create_prod",{})
+        return  request.render("inputform_prod_cons.produzentInnenformular",{})
+    # @http.route('/OldProduzentInnenformular',website = True, auth='public')
+    # def input_form(self,**kw):
+    #     # pass
+    #     # return "This is the input form in making"
+    #     # return  request.render("inputform_prod_cons.create_prod",{})
+    #     return  request.render("inputform_prod_cons.create_prod",{})
 
-    @http.route('/New_Input_thanks',website=True)
     #this is what happens when the submit button is pushed
+
+    @http.route('/DankefuersEintragen',website=True)
     def create_new_input(self,**kw):
         print("YEAH created",kw)
         dict_of_entries = kw
