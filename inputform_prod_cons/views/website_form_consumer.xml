@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="produzentInnenformular" name="Create Prod">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <!-- JavaScript/jQuery code -->
+
+                        <script src="/web/static/lib/jquery/jquery.js"></script>
+
+                        <form role="form" action="/DankefuersEintragen" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div style="height: 20px;"></div>
+
+
+                            <!-- jeder div ist ein feld!!-->
+                            <!-- Zum beispiel das hier ist ein feld Vorname mit input text
+                            der input
+                            -->
+                            <div data-visibility-condition="" data-visibility-between=""
+                                 class="s_website_form_field mb-3 col-12" data-type="char" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                           style="width: 200px" for="og3o11up5bvk">
+
+                                        <!--Bis hier nur layout und visibility condition-->
+                                        <span class="s_website_form_label_content">Vorname</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                        <!-- Label vom Feld auf der linken seite-->
+
+
+                                    </label>
+                                    <div class="col-sm">
+                                        <!--Tatsächlicher input-->
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="firstname" required="1" value="" placeholder=""
+                                               id="og3o11up5bvk"
+                                               data-fill-with="undefined"/>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                    hier ist es vorbei-->
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Nachname</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="surename"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-visibility-condition="" data-visibility-between=""
+                                 class="s_website_form_field mb-3 col-12 s_website_form_custom" data-type="email"
+                                 data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="owlu2wcf3gh8">
+
+
+                                        <span class="s_website_form_label_content">Email Adresse</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                    </label>
+                                    <div class="col-sm">
+
+                                        <input type="email" required="1" class="form-control s_website_form_input"
+                                               name="email"
+                                               value="" placeholder="" id="owlu2wcf3gh8"
+                                               data-fill-with="undefined"/>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-visibility-condition="" data-visibility-between=""
+                                 class="s_website_form_field mb-3 col-12 s_website_form_custom" data-type="tel"
+                                 data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="osgscb6g6c7n">
+
+
+                                        <span class="s_website_form_label_content">Telefonnummer</span>
+                                        <span class="s_website_form_mark">*</span>
+
+
+                                    </label>
+                                    <div class="col-sm">
+
+                                        <input type="tel" required="1" class="form-control s_website_form_input"
+                                               name="phone"
+                                               value="" placeholder="" id="osgscb6g6c7n"
+                                               data-fill-with="undefined"/>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-visibility-condition="" data-visibility-between=""
+                                 class="s_website_form_field mb-3 col-12" data-type="selection" data-name="Field">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class=" col-sm-auto s_website_form_label " style="width: 200px"
+                                           for="opuhosc5blk">
+
+
+                                        <span class="s_website_form_label_content">Ich bin</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                    </label>
+                                    <div class="col-sm">
+                                        <select id="is_company" name="is_company">
+                                            <option value="company">Unternehmen</option>
+
+                                            <option selected="1" value="private">Privatperson</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-visibility-condition="" data-visibility-between=""
+                                 class="s_website_form_field mb-3 col-12" data-type="char" data-name="Field"
+                                 id="vat_field" style="display: none;">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+
+
+                                        <span class="s_website_form_label_content">USt. Nummer (ATU + 8 Ziffern)</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                    </label>
+                                    <div class="col-sm">
+
+                                        <div class="col-sm">
+                                            <input type="text" id="vat" pattern="ATU\d{8}" name="vat"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <script src="/web/static/lib/jquery/jquery.js"></script>
+
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                $('#is_company').on('change', function() {
+                                if ($(this).val() === 'company') {
+                                $('#vat_field').show();
+                                } else {
+                                $('#vat_field').hide();
+                                }
+                                });
+                                });
+                            </script>
+
+                            <div style="height: 30px;"></div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Straße</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="street"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Hausnummer</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="housenumber"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Top</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="top"
+                                               value="" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Postleitzahl</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="zip"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Ort/Stadt</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="city"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="height: 30px;"></div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Bank Account Name</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="bank_account_name"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Iban</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" pattern="[A-Z]{2}+\d"
+                                               class="form-control s_website_form_input" name="iban"
+                                               value="" required="1" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">BIC</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" name="bic"
+                                               value="" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="height: 30px;"></div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Zählpunktnummer</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input" pattern="AT\d{33}"
+                                               name="meteringpoint"
+                                               value="" required="1" placeholder="" id="o2peqkmwyxaz"
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Netzwerkbetreiber</span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="networkprovider"
+                                               value="" required="1" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Geschätzter Jahresverbrauch (kWH)
+                                        </span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="annualconsumption"
+                                               value="" required="1" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12" data-type="selection">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class=" col-sm-auto s_website_form_label " style="width: 200px"
+                                           for="opuhosc5blk">
+
+
+                                        <span class="s_website_form_label_content">Voraussichtliches Lastprofil</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                    </label>
+                                    <div class="col-sm">
+                                        <select id="consumption_type" name="consumption_type">
+                                            <option value="household">Haushalt</option>
+
+                                            <option value="enterprise">Gewerbe</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Andere Anmerkungen</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="othercomments"
+                                               value="" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Ich stimme der Verarbeitung meiner Daten zu. Weiters in unseremn AGBS
+                                        </span>
+                                        <span class="s_website_form_mark">*</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="checkbox" class="form-control s_website_form_input"
+                                               name="agreedwithcontract"
+                                               value="" required="1" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12" data-type="selection">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class=" col-sm-auto s_website_form_label " style="width: 200px"
+                                           for="opuhosc5blk">
+
+
+                                        <span class="s_website_form_label_content">Voraussichtliches Lastprofil</span>
+                                        <span class="s_website_form_mark">*</span>
+
+                                    </label>
+                                    <div class="col-sm">
+                                        <select id="consumption_type" name="consumption_type">
+                                            <option value="household">Haushalt</option>
+
+                                            <option value="enterprise">Gewerbe</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="s_website_form_field mb-3 col-12">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <label class="col-form-label col-sm-auto s_website_form_label "
+                                           style="width: 200px" for="o2peqkmwyxaz">
+                                        <span class="s_website_form_label_content">Andere Anmerkungen</span>
+                                    </label>
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control s_website_form_input"
+                                               name="othercomments"
+                                               value="" placeholder=""
+                                        />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Abschicken</button>
+                            </div>
+
+
+                            <div style="height: 30px;"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--    for vertical line-->
+    <template id="vertical_line" name="Vertical Line">
+        <style>
+            .vertical-line {
+            border-left: 1px solid black; /* Adjust properties as needed */
+            height: 100px; /* Adjust height as needed */
+            margin: 20px 0; /* Optional: Adjust margin as needed */
+            }
+        </style>
+    </template>
+
+    <template id="thanks_for_input_site" name="Create Prod">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div class="container s_allow_columns">
+                            <div style="height: 60px;"></div>
+                            <div class="row">
+                                <div class="col-lg-7 col-xl-6 me-lg-auto">
+                                    <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
+                                    <br/>
+                                    <h1 class="text-center">Thank You!</h1>
+                                    <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                    </div>
+                                    <h5 class="text-center">
+                                        <span class="fa fa-check-circle"/>
+                                        <span>Your message has been sent
+                                            <b>successfully</b>
+                                        </span>
+                                    </h5>
+                                    <p class="text-center">We will get back to you shortly.</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <ul class="list-unstyled mb-0 ps-2">
+                                        <li>My Company</li>
+                                        <li>
+                                            <i class="fa fa-map-marker fa-fw me-2"/>
+                                            <span class="o_force_ltr">3575 Fake Buena Vista Avenue</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone fa-fw me-2"/>
+                                            <span class="o_force_ltr">+1 (650) 555-0111</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-1x fa-fw fa-envelope me-2"/>
+                                            <span>info@yourcompany.example.com</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
