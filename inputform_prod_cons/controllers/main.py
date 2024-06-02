@@ -38,9 +38,11 @@ class InputForm_OLd(http.Controller):
 
     @http.route('/DankefuersEintragen',website=True)
     def create_new_input(self,**kw):
-        print("YEAH created",kw)
+        print("YEAH I got the input",kw)
         dict_of_entries = kw
         dict_of_entries["name"] = f"{dict_of_entries['firstname']} {dict_of_entries['surename']}"
         new_record = request.env['res.partner'].sudo().create(kw)
+        print("Made a new entry in odoo")
         new_record.action_send_mail()
+        print("Sent a mail")
         return http.request.render("inputform_prod_cons.thanks_for_input_site",{})

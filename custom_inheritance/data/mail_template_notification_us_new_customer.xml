@@ -10,16 +10,17 @@
             <field name="model_id" ref="model_res_partner"/>
             <field name="email_from">{{user.email}}</field>
             <field name="email_to">odoo07800@gmail.com</field>
-            <field name="subject">Patient Card</field>
+            <field name="subject">Neuer Eintrag im Onlineformular</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                        Neuer Eintrag:
+                        Es gabe einen neuen Eintrag:
                         <br /><br />
-                        Age : {{object.persontype}}
-                        Contact Number : {{object.email}}
+                        <span t-field="object.firstname"/>
                         <br /><br />
-                        If you have queries feel free to ask.
+                        <span t-field="object.surename"/>
+                        <br /><br />
+                        Schau mal ins Odoo
                     </p>
                 </div>
             </field>

@@ -11,18 +11,51 @@
 <!--            ????????-->
             <field name="email_from">{{user.email}}</field>
             <field name="email_to">{{object.email}}</field>
+            <field name="subject">Neuanmeldung Gemeinwohlenergie Innsbruck</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Hallo
+                        <span t-field="object.firstname"/>
+                        <br /><br />
+                        Du hast dich bei unserer Energiegemeinschaft angemeldet.
+                        <br /><br />
+                        Deine Zählpunktnummer ist <span t-field="object.meteringpoint"/>.
+
+                        <br /><br />
+                        Wir melden uns sobald wie möglich bei dir und freuen uns auf
+                    </p>
+                </div>
+            </field>
+<!--            there it goes to a attachment probably-->
+<!--            <field name="report_template" ref="report_patient_card"/>-->
+<!--            <field name="report_name">Patient Card_${(object.name_seq)}</field>-->
+        </record>
+    </data>
+
+        <data noupdate="1">
+        <record id="new_prod_kons_created" model="mail.template">
+            <field name="name">Neuer Prod Kons wurde erstellt</field>
+            <field name="model_id" ref="model_res_partner"/>
+<!--            ????????-->
+            <field name="email_from">{{user.email}}</field>
+            <field name="email_to">{{object.email}}</field>
             <field name="subject">Patient Card</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                        Dear {{object.firstname}}
+                        Hallo
+                        <span t-field="object.firstname"/>
                         <br /><br />
-                        We recieved your info
+                        Du hast dich bei unserer Energiegemeinschaft angemeldet.
                         <br /><br />
-                        Age : {{object.persontype}}
-                        Contact Number : {{object.email}}
+                        Deine Zählpunktnummer ist <span t-field="object.meteringpoint"/>.
                         <br /><br />
-                        If you have queries feel free to ask.
+                        Wir melden uns sobald wie möglich bei dir mit einem Vertrag.
+                        <br /><br />
+                        Bis dahin freuen uns dich dabei zu haben.
+                         <br /><br />
+                        Die Geimeinwohlenergie
                     </p>
                 </div>
             </field>

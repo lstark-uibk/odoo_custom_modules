@@ -53,7 +53,7 @@ class CustomPartner_inheritance(models.Model):
          default = 'pv_south'
     ,tracking=True)
     othercomments = fields.Char(string="Andere Anmerkungen", tracking=True)
-
+    agreedwithcontract = fields.Boolean(string="Hat Vertrag zugestimmt", tracking=True)
 
 
 
