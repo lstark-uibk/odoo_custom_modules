@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <!-- Top menu item -->
+    <menuitem name="Produzenten Konsumenten"
+        id="prod_cons_root"
+        sequence="10"
+    />
+
+    <menuitem name = "Actions"
+        id = "all_prod_cons"
+        sequence="10"
+        parent = "prod_cons_root"
+    />
+
+
+<!--    <menuitem name = "Daten"-->
+<!--        id = "all_prod_cons_child"-->
+<!--        sequence="55"-->
+<!--        parent = "all_prod_cons"-->
+<!--        action = "action_view_prod_cons"-->
+<!--    />-->
+
+</odoo>

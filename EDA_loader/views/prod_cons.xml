@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+                <!-- VIEWS -->
+<!--    <record id="view_prod_cons_form" model="ir.ui.view">-->
+<!--        <field name="name">gei.prod_cons.form</field>-->
+<!--        <field name="model">gei.prod_cons</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="firstname" />-->
+<!--                        <field name="surename" />-->
+<!--                        <field name="persontype" />-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_prod_cons_tree" model="ir.ui.view">-->
+<!--        <field name="name">gei.prod_cons.tree</field>-->
+<!--        <field name="model">gei.prod_cons</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="firstname" />-->
+<!--                <field name="surename" />-->
+<!--                <field name="persontype" />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+<!--    <record id="action_view_prod_cons" model="ir.actions.act_window">-->
+<!--        <field name="name">Daten</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">gei.prod_cons</field>-->
+<!--        <field name="view_mode">tree,kanban,form</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                create your first patient!-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <menuitem id="prod_cons_root"
+        name="Produzenten Konsumenten"
+        sequence="10"
+    />
+
+    <menuitem id = "prod_cons_all"
+        name = "Actions"
+        sequence="10"
+        parent = "prod_cons_root"
+    />
+
+    <menuitem  id = "all_prod_cons_child"
+        name = "Daten"
+        sequence="10"
+        parent = "prod_cons_all"
+        action = "action_view_prod_cons"
+    />
+</odoo>
